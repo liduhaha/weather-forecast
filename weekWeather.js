@@ -1,5 +1,5 @@
 class WeekWeather{
-
+    // Створює і заповнює блок з погодою наступних днів
     static showWeekWeather(url) {
         const block = document.createElement("div");
         block.classList.add("week-container");
@@ -16,6 +16,7 @@ class WeekWeather{
         return block;
     }
 
+    // Окреме заповнення кожного дня тижня
     static fillWeekDay(json, day) {
         return `<div class="name-dayWeek">${this.getWeekDay(json, day)}</div>
                 <div class="date-dayWeek">${this.getWeekDate(json, day)}</div>
@@ -25,14 +26,17 @@ class WeekWeather{
                 <div class="weather-dayWeek">${this.getWeekDayWeather(json, day)}</div>`;
     }
 
+    // Отримуємо погоду 
     static getWeekDayWeather(json, day) {
         return json.list[(8 * day) + 4].weather[0].main;
     }
-
+    
+    // Отримуємо зображення
     static getWeekImg(json, day) {
         return json.list[(8 * day) + 4].weather[0].icon;
     }
 
+    // Отримуємо мінімальну погоду за відповідний день
     static getWeekDayMinTemp(json, day) {
         let iteration = 8 * day;
         let end = iteration + 7;
@@ -44,6 +48,7 @@ class WeekWeather{
         return min;
     }
 
+    // Отримуємо максимальну погоду за відповідний день
     static getWeekDayMaxTemp(json, day) {
         let iteration = 8 * day;
         let end = iteration + 7;
@@ -55,12 +60,14 @@ class WeekWeather{
         return max;
     }
 
+    // Отримуємо назву дня тижня
     static getWeekDay(json, day) {
         let date = new Date(json.list[8 * day].dt * 1000);
 
         return date.toLocaleDateString('en-US', {weekday: 'long'})
     }
 
+    // Отримуємо дату 
     static getWeekDate(json, day) {
         let date = new Date(json.list[8 * day].dt * 1000);
         const options = {
@@ -70,5 +77,4 @@ class WeekWeather{
         };
         return date.toLocaleDateString('en-US', options)
     }
-
 }

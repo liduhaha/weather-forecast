@@ -1,6 +1,5 @@
 class GetData {
-
-
+    // Створює і заповнює блок із сьогоднішньою погодою
     fillIn(elem, url1, url2) {
         const cont = document.createElement("div");
         cont.classList.add("cont");
@@ -31,12 +30,13 @@ class GetData {
             elem.insertAdjacentElement('beforeend', cont);  
     }
 
+    // Отримую назву дня тижня
     getDay(json) {
         let date = new Date(json * 1000);
-
         return date.toLocaleDateString('en-US', {weekday: 'long'})
     }
 
+    // Отримую дату і час в залежності від часового поясу
     getDate(timezone) {
         const today = new Date();
         let offset = today.getTimezoneOffset();
@@ -50,6 +50,7 @@ class GetData {
         return `${today.toLocaleString('en-US', options)}<br> ${today.toLocaleTimeString()}`;
     }
 
+    // Отримую температуру з Кельвінів
     static getTemp(k) {
         return `${parseInt(k * 1.8 - 459.67)}F / ${parseInt((k - 273.15))}C`;
     }
