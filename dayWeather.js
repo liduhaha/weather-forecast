@@ -31,7 +31,7 @@ class GetData {
             elem.insertAdjacentElement('beforeend', cont);  
     }
 
-    static getWeekDay(json) {
+    getDay(json) {
         let date = new Date(json * 1000);
 
         return date.toLocaleDateString('en-US', {weekday: 'long'})
