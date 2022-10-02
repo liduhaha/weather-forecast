@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    background-color: #513d70;
+}
+
+#container {
+    width: 80%;
+    height: fit-content;
+    padding: 10px;
+    margin: 0 auto 0 auto;
+    box-shadow: 1px 1px 40px 6px rgba(0,0,0,0.59);
+}
+
+.cont {
+    background-color: lightgray;
+    border-radius: 10px;
+    margin: 20px;
+    padding-bottom: 30px;
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.cont:hover {
+    outline: 10px double white;
+    background-color: black;
+}
+
+.cont:hover div{
+    color: white;
+}
+
+
+.name {
+     align-self: center;
+     font-size: 3em;
+}
+
+.n-d {
+    align-self: center;
+}
+
+.temp-cont {
+    align-self: center;
+    text-align: center;
+    font-size: 40px;
+}
+
+img {
+    width: 18%;
+    height: auto;
+}
+
+.weather, .weather-descr {
+    font-size: 16px;
+}
+
+.week-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.week-day {
+    width: 20%;
+    height: fit-content;
+    text-align: center;
+    line-height: 25px;
+}
+
+.name-dayWeek {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.weather-dayWeek {
+    margin-top: -25px;
+}
+
+.maxTemp-dayWeek {
+    color: darkred;
+}
+
+.minTemp-dayWeek {
+    color: darkblue;
+}
+
+.img-dayWeek {
+    width: 50%;
+}
