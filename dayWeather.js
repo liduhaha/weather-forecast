@@ -12,6 +12,7 @@ class GetData {
             .then((json) => {
                 block.innerHTML += `<div class="n-d">
                                     <div class="name">${json.name}</div>
+                                    <div class="day">${this.getDay(json.dt)}</div>
                                     <div class="date">${this.getDate(json.timezone)}</div>
                                     </div>`
 
@@ -27,13 +28,15 @@ class GetData {
             cont.insertAdjacentElement('beforeend', block);
             cont.insertAdjacentElement('beforeend', WeekWeather.showWeekWeather(url2));
 
-            elem.insertAdjacentElement('beforeend', cont);
-            
-            
-            
+            elem.insertAdjacentElement('beforeend', cont);  
     }
 
-    
+    static getWeekDay(json) {
+        let date = new Date(json * 1000);
+
+        return date.toLocaleDateString('en-US', {weekday: 'long'})
+    }
+
     getDate(timezone) {
         const today = new Date();
         let offset = today.getTimezoneOffset();
