@@ -21,7 +21,7 @@ class WeekWeather{
                 <div class="date-dayWeek">${this.getWeekDate(json, day)}</div>
                 <div class="minTemp-dayWeek">Min: ${GetData.getTemp(this.getWeekDayMinTemp(json, day))}</div>
                 <div class="maxTemp-dayWeek">Max: ${GetData.getTemp(this.getWeekDayMaxTemp(json, day))}</div>
-                <img class="img-dayWeek" src="http://openweathermap.org/img/wn/${this.getWeekImg(json,day)}@2x.png" alt="${this.getWeekImg(json,day)}">
+                <img class="img-dayWeek" src="https://openweathermap.org/img/wn/${this.getWeekImg(json,day)}@2x.png" alt="${this.getWeekImg(json,day)}">
                 <div class="weather-dayWeek">${this.getWeekDayWeather(json, day)}</div>`;
     }
 
