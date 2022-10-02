@@ -16,7 +16,7 @@ class GetData {
                                     <div class="date">${this.getDate(json.timezone)}</div>
                                     </div>`
 
-                block.innerHTML += `<img src="http://openweathermap.org/img/wn/${json.weather[0]['icon']}@2x.png" alt=${json.weather[0]["main"]}>`;
+                block.innerHTML += `<img src="https://openweathermap.org/img/wn/${json.weather[0]['icon']}@2x.png" alt=${json.weather[0]["main"]}>`;
                 
                 block.innerHTML += `<div class="temp-cont">
                                     <div class="temp">${GetData.getTemp(json.main.temp)}</div>
